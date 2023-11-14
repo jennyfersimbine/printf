@@ -1,23 +1,21 @@
 #include "printf.h"
+#include <unistd.h>
 
+/**
+ * print_char - print hcaracters
+ * @c: char to ptint
+ * Return: int
+ */
 int print_char(char c)
 {
-	static char buff[1024];
-	static int i;
-
-	if (c == -1 || i >= 1024)
-	{
-		write(1, &buff, i);
-		i = 0;
-	}
-	if (c != -1)
-	{
-		buff[i] = c;
-		i++;
-	}
-	return (1);
+	return (write(1, &c, 1));
 }
 
+/**
+ * print_string - print strings
+ * @str: string to print
+ * Return: nr of chars printed
+ */
 int print_string(char *str)
 {
 	int i;

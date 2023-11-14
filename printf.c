@@ -1,6 +1,10 @@
 #include "printf.h"
 
-
+/**
+ * _printf - printf function
+ * @format: const char pointer
+ * Return: b_len
+ */
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -22,14 +26,11 @@ int _printf(const char *format, ...)
 				return (-1);
 			}
 			if (*format == 'c')
-			{
-				nrCharsPrinted += print_char(va_arg(args, int));
-			}
-			else if (*format == 's')
+			{																nrCharsPrinted += print_char(va_arg(args, int));
+			} else if (*format == 's')
 			{
 				nrCharsPrinted += print_string(va_arg(args, char *));
-			}
-			else if (*format == 'i' || *format == 'd')
+			} else if (*format == 'i' || *format == 'd')
 			{
 				nrCharsPrinted += print_int(va_arg(args, int));
 			} else
