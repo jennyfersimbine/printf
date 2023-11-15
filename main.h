@@ -11,4 +11,5 @@ int print_string(char *str);
 void print_digit(int n);
 int nrDigitsPrinted(int n);
 int print_int(int n);
+char *converter(unsigned long int number, int inputBase, int lowercase);
 #endif /*PRINTF_H*/
